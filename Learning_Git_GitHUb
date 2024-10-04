@@ -1,0 +1,109 @@
+At Git panel 
+git config --global user.name "<github account userName>"
+
+git config --global user.email "<emailaddress registered at github>"
+
+git config --list
+
+
+
+
+------At VS Code ot any text editor Panel
+
+git --version
+
+CLONE - cloning a repository on our local machine
+git clone <link from github>
+
+cd(change directory) , ls (list disk)
+
+STATUS - Display the status of the code
+git status 
+
+----- After any modification/addition of files we should update it on github account also
+Terms related to it....
+1. Untracked = New files that git doesn't yet track 
+2. MOdified = changed
+3. Staged = File is ready to be commited
+4. UnModified = Unchanged
+
+ADD = adds new or changed files in your working directory to the git statging area
+git add <file-name>
+git add .    # to add all files at the current location
+
+commit = It is the record of change
+git commit -m "some message" 
+
+PUSH = after commit we should use this to finally add the data to github server
+        uplaod local repo content to remote repo
+git push origin main
+
+NOTE : write "cd .." in terminal to GoBack to previous folder
+        to make repository at current location "mkdir <folder_name>"
+
+
+------ Init Commands
+it is used to create a  new git repo
+
+git init
+
+git remote add origin <link of repo from github repository>
+
+git remote -v  (to verify remote)
+
+git branch    (to check branch)
+
+git branch -M main (to rename branch)
+
+git push origin main  (Finally upload to GitHUb)(main is a branch name(branch reference name))
+
+we can also write "git push -u origin main" , Because while using again push and another commandas we can run this without writing "origin main keyword"
+
+GitHub Repo---> Clone---> Changes---> add---> commit---> push
+
+-------- Make two branches from one then Merge them again
+git branch   (to check branch)
+
+git branch -M main   (to rename branch)(Here main is new name of branch)
+
+git checkout <brach-name>   (to navigate)
+
+git checkout -b <new-branch-name>  (to create new branch)
+
+git branch -d <branch-name>  (to delete branch)
+
+
+--------- Merging two branches
+        way 1
+git diff <branch-name>  (to compare commits, branches,files & more)
+
+git merge <branch-name>  (to merge 2 branches)
+
+        way 2
+Create a PR   
+(Pull Request = it lets you tell others about changes you've pushed to a branch in a repository on GitHub)
+
+--------- Merge Conflicts
+An event that takes place when git is unable to automatically resolve difference in code between two commits
+
+------------ Pull Command
+git pull origin main
+
+used to fetch and downlaod content from a remote repo and immediately update the local repo to match that content
+
+
+------------ Undoing Changes
+Case 1 : staged changes (added but not commited)
+        git reset <file-name>
+        git reset   (to reset all files)
+        git log (to check the history)
+case 2 : commited changes (for one commit)
+        git reset HEAD~1   
+        (HEAD is the last change that made and 1 is for we only have to go back 1 step only)
+
+case 3 : commited changes (for many commits)
+        git reset <commit-hash>    (hash can be copied from log)
+        git reset --hard <commit hash>
+
+---------- Fork (is a rough copy)
+It is a new repository that shares code and visibility settings with the original "Upstream" repository
